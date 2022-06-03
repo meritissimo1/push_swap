@@ -7,9 +7,22 @@
 # include <limits.h>
 # include <stdarg.h>
 
+typedef struct No
+{
+	int value;
+	struct No *next;
+}No;
+
+typedef struct
+{
+	No *start;
+	int size;
+}list;
+
 void	ft_putnbr_fd(int n, int fd);
 int		ft_atoi(const char *str);
 int		ft_isalpha(int n);
+
 
 
 #endif
