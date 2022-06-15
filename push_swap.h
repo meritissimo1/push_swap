@@ -7,21 +7,24 @@
 # include <limits.h>
 # include <stdarg.h>
 
-typedef struct No
+typedef struct Node
 {
-	int value;
-	struct No *next;
-}No;
+	struct Node *next;
+	int 		value;
+
+}Node;
 
 typedef struct
 {
-	No *start;
+	Node *start;
 	int size;
 }list;
 
+void 	insert_end(list *List, int value);
 void	ft_putnbr_fd(int n, int fd);
 int		ft_atoi(const char *str);
 int		ft_isalpha(int n);
+void    ft_sa(list *stack);
 
 
 
