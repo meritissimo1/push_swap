@@ -1,30 +1,56 @@
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/09 10:15:25 by marcrodr          #+#    #+#             */
+/*   Updated: 2022/08/18 08:51:33 by marcrodr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef	PUSH_SWAP
+# define PUSH_SWAP
 
 # include <stdio.h>
 # include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-# include <stdarg.h>
+# include "libft/libft.h"
 
-typedef struct Node
+
+typedef struct s_node
 {
-	struct Node *next;
-	int 		value;
+	int				value;
+	struct s_node	*next;
+	struct s_node	*previous;
+}t_node;
 
-}Node;
-
-typedef struct
+typedef struct s_stacks
 {
-	Node *start;
-	int size;
-}list;
+	t_node	*a;
+	t_node	*b;
+	int		size_a;
+	int		size_b;	
+}t_stacks;
 
-void 	insert_end(list *List, int value);
-void	ft_putnbr_fd(int n, int fd);
-int		ft_atoi(const char *str);
-int		ft_isalpha(int n);
-void    ft_sa(list *stack);
+void	check_for_errors(char **argv);
+
+void    ft_swap_a(t_stacks *stack);
+void    ft_swap_b(t_stacks *stack);
+void	ft_swap_both(t_stacks *stack);
+
+void	ft_push_a(t_stacks *stack);
+void    ft_push_b(t_stacks *stack);
+
+void	ft_rotate_a(t_stacks *stack);
+void	ft_rotate_b(t_stacks *stack);
+void	ft_rotate_both(t_stacks *stack);
+
+void	ft_reverse_rotate_a(t_stacks *stack);
+void	ft_reverse_rotate_b(t_stacks *stack);
+void	ft_reverse_rotate_both(t_stacks *stack);
+
+
 
 
 
