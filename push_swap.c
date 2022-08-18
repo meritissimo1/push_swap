@@ -6,13 +6,13 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 10:15:10 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/18 08:51:53 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/18 09:28:49 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	insert_end(t_stacks *stack, int value, int size)
+void	insert_end(t_stacks *stack, int value)
 {
 	t_node *new;
 	t_node *aux;
@@ -31,8 +31,7 @@ void	insert_end(t_stacks *stack, int value, int size)
 	while (aux->next)
 		aux = aux->next;
 	aux->next = new;
-	new->previous = aux;	
-	stack->size_a = size;
+	new->previous = aux;
 }
 
 void	print_stack(t_stacks *stack)
@@ -68,15 +67,15 @@ int main(int argc, char **argv)
 {
 	t_stacks	*stack;
 	int			i;
-	(void)argc;
 
 	i = 1;
 	stack = (t_stacks *)malloc(sizeof(t_stacks));
 	init_stack(stack);
 	check_for_errors(argv);
+	stack->size_a = argc -1;
 	while (argv[i])
 	{
-		insert_end(stack, ft_atoi(argv[i]), argc-1);
+		insert_end(stack, ft_atoi(argv[i]));
 		i++;
 	}
 

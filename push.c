@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 16:52:45 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/17 16:48:23 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/18 09:50:18 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ void	ft_push_b(t_stacks *stack)
 		stack->size_b += 1;
 		stack->a->previous->value = 0;
 	}
-
+	free(aux_a);
+	free(aux_b);
 }
 
 void	ft_push_a(t_stacks *stack)
@@ -77,4 +78,6 @@ void	ft_push_a(t_stacks *stack)
 		stack->size_a += 1;
 		stack->size_b -= 1;
 	}
+	free(aux_a);
+	free(aux_b);
 }

@@ -6,25 +6,25 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 14:22:57 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/11 15:24:46 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/18 09:21:59 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_int_tam(char *argv)
+void	check_int_size(char *argv)
 {
 	long long int	number;
 
 	number = ft_itoll(argv);
 	if (number > INT_MAX)
 		{
-			ft_printf("Number TOO High\n");
+			ft_printf("Number TOO large\n");
 			exit(-1);
 		}
 	else if (number < INT_MIN)
 		{
-			ft_printf("Number TOO Low\n");
+			ft_printf("Number TOO small\n");
 			exit(-1);
 		}
 }
@@ -66,7 +66,7 @@ void	check_for_errors(char **argv)
 			j++;
 		}
 		check_for_digits(argv[i]);
-		check_int_tam(argv[i]);
+		check_int_size(argv[i]);
 		i++;	
 	}	
 }
