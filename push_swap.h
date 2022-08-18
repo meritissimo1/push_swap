@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 10:15:25 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/18 08:51:33 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/18 10:23:02 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ void    ft_swap_b(t_stacks *stack);
 void	ft_swap_both(t_stacks *stack);
 
 void	ft_push_a(t_stacks *stack);
-void    ft_push_b(t_stacks *stack);
+void	ft_push_b(t_stacks *stack);
+void	ft_push_b_empty(t_stacks *stack, t_node *aux_a, t_node *aux_b);
+void	ft_push_a_empty(t_stacks *stack, t_node *aux_a, t_node *aux_b);
+
 
 void	ft_rotate_a(t_stacks *stack);
 void	ft_rotate_b(t_stacks *stack);

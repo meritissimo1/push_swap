@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 10:15:10 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/18 09:28:49 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/18 10:27:11 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ int main(int argc, char **argv)
 	ft_reverse_rotate_b(stack);
 	print_stack(stack);
 	ft_reverse_rotate_both(stack);
+	print_stack(stack);
+	ft_push_a(stack);
 	print_stack(stack);
 	free(stack);
 	

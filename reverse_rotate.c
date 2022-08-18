@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 17:07:29 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/18 09:49:03 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/18 10:05:49 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ void	ft_reverse_rotate_a(t_stacks *stack)
 	}
 	tail->next = NULL;
 	stack->a = aux_a;
-	free(aux_a);
-	free(tail);	
 }
 
 void	ft_reverse_rotate_b(t_stacks *stack)
@@ -62,8 +60,6 @@ void	ft_reverse_rotate_b(t_stacks *stack)
 	}
 	tail->next = NULL;
 	stack->b = aux_b;
-	free(aux_b);
-	free(tail);	
 }
 
 void	ft_reverse_rotate_both(t_stacks *stack)

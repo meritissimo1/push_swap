@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
-SRC = push_swap.c error.c swap.c push.c rotate.c reverse_rotate.c
+SRC = push_swap.c error.c swap.c push.c rotate.c reverse_rotate.c pop_push.c
 OBJ = $(SRC:.c=.o)
 INCLUDE = include/push_swap.h
 
