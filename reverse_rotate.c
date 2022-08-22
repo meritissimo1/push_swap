@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 17:07:29 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/18 10:05:49 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/19 14:39:47 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	ft_reverse_rotate_a(t_stacks *stack)
 	int		i;
 
 	aux_a = (t_node *)malloc(sizeof(t_node));
-	tail = (t_node *)malloc(sizeof(t_node));
 	i = 1;
 	tail = stack->a;
 	while (tail->next)
@@ -45,7 +44,6 @@ void	ft_reverse_rotate_b(t_stacks *stack)
 	int		i;
 
 	aux_b = (t_node *)malloc(sizeof(t_node));
-	tail = (t_node *)malloc(sizeof(t_node));
 	i = 1;
 	tail = stack->b;
 	while (tail->next)

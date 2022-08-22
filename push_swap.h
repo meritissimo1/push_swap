@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 10:15:25 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/18 10:23:02 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/21 22:48:40 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP
 
 # include <stdio.h>
+# include <stdbool.h>
 # include <stdlib.h>
 # include "libft/libft.h"
 
@@ -30,10 +31,18 @@ typedef struct s_stacks
 	t_node	*a;
 	t_node	*b;
 	int		size_a;
-	int		size_b;	
+	int		size_b;
+	int		total;
 }t_stacks;
 
+
+void	print_stack(t_stacks *stack); // LEMBRA DE REMOVER DPS
+
+int*	ft_normalize(char **argv, int size, int *aux);
+
 void	check_for_errors(char **argv);
+bool	ft_is_sorted(t_stacks *stack);
+void	radix_sort(t_stacks *stack);
 
 void    ft_swap_a(t_stacks *stack);
 void    ft_swap_b(t_stacks *stack);

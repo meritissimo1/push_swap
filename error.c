@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 14:22:57 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/18 09:21:59 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/22 09:10:09 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,9 @@ void	check_int_size(char *argv)
 void	check_for_digits(char *argv)
 {
 	int	i;
-
+	
 	i = 0;
+	printf("ARGV %d\n", argv[i]);
 	if (argv[i] == '-' || argv[i] == '+')
 		i = 1;
 	while (argv[i])

@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 10:15:10 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/18 10:27:11 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/22 11:38:02 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	print_stack(t_stacks *stack)
 		printf("stack_b: %d ", start_b->value);
 		start_b = start_b->next;
 	}
-	printf("\ntamanho de a: %d\n\n", stack->size_a);
+	printf("\n\ntamanho de a: %d\n\n", stack->size_a);
 	printf("tamanho de b: %d\n\n", stack->size_b);
 }
 
@@ -67,51 +67,29 @@ int main(int argc, char **argv)
 {
 	t_stacks	*stack;
 	int			i;
-
-	i = 1;
+	int*		test;
+	int			aux[argc-1];
+	//char		*dup;
+	
+	//dup = ft_strdup(argv);
+	i = 0;
 	stack = (t_stacks *)malloc(sizeof(t_stacks));
 	init_stack(stack);
 	check_for_errors(argv);
+	test = ft_normalize(argv, argc-1, aux);
+	//printf(" OPA: %p", test);
+	stack->total = argc - 1;
 	stack->size_a = argc -1;
-	while (argv[i])
+	printf("%d", test[i]);
+	while (i < argc-1)
 	{
-		insert_end(stack, ft_atoi(argv[i]));
+		insert_end(stack, test[i]);
 		i++;
 	}
 
-	print_stack(stack);
-	ft_swap_a(stack);	
-	print_stack(stack);
-	ft_push_b(stack);
-	print_stack(stack);
-	ft_push_b(stack);
-	print_stack(stack);
-	ft_swap_b(stack);
-	ft_push_b(stack);
-	print_stack(stack);
-	ft_swap_both(stack);
-	print_stack(stack);
-	ft_rotate_a(stack);
-	ft_rotate_a(stack);
-	print_stack(stack);
-	ft_rotate_b(stack);
-	print_stack(stack);
-	ft_rotate_b(stack);
-	print_stack(stack);
-	ft_rotate_both(stack);
-	print_stack(stack);
-	ft_reverse_rotate_a(stack);
-	print_stack(stack);
-	ft_reverse_rotate_a(stack);
-	print_stack(stack);
-	ft_reverse_rotate_a(stack);
-	print_stack(stack);
-	ft_reverse_rotate_b(stack);
-	print_stack(stack);
-	ft_reverse_rotate_both(stack);
-	print_stack(stack);
-	ft_push_a(stack);
-	print_stack(stack);
+	//print_stack(stack);
+	radix_sort(stack);
+	//print_stack(stack);
 	free(stack);
 	
 	return(0);

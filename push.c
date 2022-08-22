@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 16:52:45 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/18 10:23:33 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/19 14:41:49 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	ft_push_b(t_stacks *stack)
 	t_node	*aux_b;
 	t_node	*aux_a;
 
+	printf("push b\n");
 	aux_a = (t_node *)malloc(sizeof(t_node));
 	aux_b = (t_node *)malloc(sizeof(t_node));
 	if(stack->b == NULL)

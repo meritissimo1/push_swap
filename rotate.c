@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 16:25:14 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/18 10:06:02 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/22 10:12:57 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ void	ft_rotate_a(t_stacks *stack)
 	t_node	*tail;
 	t_node	*head;
 
-	aux_a = (t_node *)malloc(sizeof(t_node));
-	tail = (t_node *)malloc(sizeof(t_node));
+	if (stack->size_a == 1)
+		return ;
 	head = (t_node *)malloc(sizeof(t_node));	
-	
 	tail = stack->a;
+	if (tail == NULL)
+		return ;
 	aux_a = stack->a->next;
 	head->value = stack->a->value;
 	head->next = NULL;
 	while (tail->next)
 		tail = tail->next;
-	head->previous = tail->previous;
 	tail->next = head;
 	stack->a = aux_a;
 }
@@ -41,17 +41,16 @@ void	ft_rotate_b(t_stacks *stack)
 	t_node	*tail;
 	t_node	*head;
 
-	aux_b = (t_node *)malloc(sizeof(t_node));
-	tail = (t_node *)malloc(sizeof(t_node));
 	head = (t_node *)malloc(sizeof(t_node));	
 	
 	tail = stack->b;
+	if (tail == NULL)
+		return ;
 	aux_b = stack->b->next;
 	head->value = stack->b->value;
 	head->next = NULL;
 	while (tail->next)
 		tail = tail->next;	
-	head->previous = tail->previous;
 	tail->next = head;
 	stack->b = aux_b;	
 }
