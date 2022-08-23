@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 14:16:38 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/20 18:01:51 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/23 08:55:41 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ bool	ft_is_sorted(t_stacks *stack)
 	while (i < stack->size_a - 1)
 	{
 		if (aux->value > aux->next->value)
-			return (false);	
+			return (false);
 		aux = aux->next;
-		i++;		
+		i++;
 	}
-	return (true);	
+	return (true);
 }

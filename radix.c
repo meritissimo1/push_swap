@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 14:31:19 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/22 11:41:30 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/23 08:54:43 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	ft_sort_by_bit(t_stacks *stack, int i)
 		if (ft_bit_significant(stack->a->value, i))
 			ft_rotate_a(stack);
 		else
-			ft_push_b(stack); 
+			ft_push_b(stack);
 		j++;
 	}
 }
@@ -44,6 +44,6 @@ void	radix_sort(t_stacks *stack)
 		{	
 			ft_push_a(stack);
 		}
-		i++;		
+		i++;
 	}
-} 
+}

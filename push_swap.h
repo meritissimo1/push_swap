@@ -6,18 +6,16 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 10:15:25 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/21 22:48:40 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/23 08:55:04 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	PUSH_SWAP
-# define PUSH_SWAP
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <stdbool.h>
 # include <stdlib.h>
 # include "libft/libft.h"
-
 
 typedef struct s_node
 {
@@ -35,24 +33,20 @@ typedef struct s_stacks
 	int		total;
 }t_stacks;
 
-
-void	print_stack(t_stacks *stack); // LEMBRA DE REMOVER DPS
-
-int*	ft_normalize(char **argv, int size, int *aux);
+int		*ft_normalize(char **argv, int size, int *aux);
 
 void	check_for_errors(char **argv);
 bool	ft_is_sorted(t_stacks *stack);
 void	radix_sort(t_stacks *stack);
 
-void    ft_swap_a(t_stacks *stack);
-void    ft_swap_b(t_stacks *stack);
+void	ft_swap_a(t_stacks *stack);
+void	ft_swap_b(t_stacks *stack);
 void	ft_swap_both(t_stacks *stack);
 
 void	ft_push_a(t_stacks *stack);
 void	ft_push_b(t_stacks *stack);
 void	ft_push_b_empty(t_stacks *stack, t_node *aux_a, t_node *aux_b);
 void	ft_push_a_empty(t_stacks *stack, t_node *aux_a, t_node *aux_b);
-
 
 void	ft_rotate_a(t_stacks *stack);
 void	ft_rotate_b(t_stacks *stack);
@@ -61,9 +55,5 @@ void	ft_rotate_both(t_stacks *stack);
 void	ft_reverse_rotate_a(t_stacks *stack);
 void	ft_reverse_rotate_b(t_stacks *stack);
 void	ft_reverse_rotate_both(t_stacks *stack);
-
-
-
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 10:13:16 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/18 13:51:04 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/23 08:55:20 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_push_b_empty(t_stacks *stack, t_node *aux_a, t_node *aux_b)
 {
-	aux_a = stack->a->next;	
+	aux_a = stack->a->next;
 	aux_b->value = stack->a->value;
 	aux_b->next = NULL;
 	stack->b = aux_b;
@@ -23,9 +23,9 @@ void	ft_push_b_empty(t_stacks *stack, t_node *aux_a, t_node *aux_b)
 	stack->size_b += 1;
 }
 
-void   ft_push_a_empty(t_stacks *stack, t_node *aux_a, t_node *aux_b)
+void	ft_push_a_empty(t_stacks *stack, t_node *aux_a, t_node *aux_b)
 {
-	aux_b = stack->b->next;	
+	aux_b = stack->b->next;
 	aux_a->value = stack->b->value;
 	aux_a->next = NULL;
 	aux_a->previous = NULL;

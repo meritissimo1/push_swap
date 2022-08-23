@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 17:07:29 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/19 14:39:47 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/23 08:45:03 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_reverse_rotate_a(t_stacks *stack)
 {
-	printf("reverse rotate a\n");
 	t_node	*aux_a;
 	t_node	*tail;
 	int		i;
@@ -34,11 +33,11 @@ void	ft_reverse_rotate_a(t_stacks *stack)
 	}
 	tail->next = NULL;
 	stack->a = aux_a;
+	ft_printf("reverse rotate a\n");
 }
 
 void	ft_reverse_rotate_b(t_stacks *stack)
 {
-	printf("reverse rotate b\n");
 	t_node	*aux_b;
 	t_node	*tail;
 	int		i;
@@ -58,6 +57,7 @@ void	ft_reverse_rotate_b(t_stacks *stack)
 	}
 	tail->next = NULL;
 	stack->b = aux_b;
+	ft_printf("reverse rotate b\n");
 }
 
 void	ft_reverse_rotate_both(t_stacks *stack)
