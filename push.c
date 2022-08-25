@@ -6,57 +6,62 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 16:52:45 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/23 08:54:52 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/25 10:08:10 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_push_b(t_stacks *stack)
+void	push_b(t_stacks *stack)
 {
-	t_node	*aux_b;
-	t_node	*aux_a;
+	t_node	*aux;
+	t_node	*tail;
+	t_node	*head;
 
-	ft_printf("push b\n");
-	aux_a = (t_node *)malloc(sizeof(t_node));
-	aux_b = (t_node *)malloc(sizeof(t_node));
-	if (stack->b == NULL)
-	{
-		ft_push_b_empty(stack, aux_a, aux_b);
-	}
+	aux = pop_a(stack);
+	head = stack->b;
+	if (!head)
+		connect_node(aux, aux);
 	else
-	{	
-		aux_b->next = stack->b;
-		aux_b->value = stack->a->value;
-		stack->b = aux_b;
-		aux_a = stack->a->next;
-		stack->a = aux_a;
-		stack->size_a -= 1;
-		stack->size_b += 1;
+	{
+		tail = head->previous;
+		aux->next = head;
+		head->previous = aux;
+		aux->previous = tail;
+		tail->next = aux;
 	}
+	stack->size_a -= 1;
+	stack->size_b += 1;
+	stack->b = aux;
+	ft_printf("push b\n");
 }
 
-void	ft_push_a(t_stacks *stack)
+void	push_a(t_stacks *stack)
 {
-	t_node	*aux_b;
-	t_node	*aux_a;
+	t_node	*aux;
+	t_node	*tail;
+	t_node	*head;
 
-	ft_printf("push_a\n");
-	aux_a = (t_node *)malloc(sizeof(t_node));
-	aux_b = (t_node *)malloc(sizeof(t_node));
-	if (stack->a == NULL)
-	{
-		ft_push_a_empty(stack, aux_a, aux_b);
-	}
+	aux = pop_b(stack);
+	head = stack->a;
+	if (!head)
+		connect_node(aux, aux);
 	else
 	{
-		aux_a->next = stack->a;
-		aux_a->value = stack->b->value;
-		aux_a->previous = NULL;
-		stack->a = aux_a;
-		aux_b = stack->b->next;
-		stack->b = aux_b;
-		stack->size_a += 1;
-		stack->size_b -= 1;
+		tail = head->previous;
+		aux->next = head;
+		head->previous = aux;
+		aux->previous = tail;
+		tail->next = aux;
 	}
+	stack->size_a += 1;
+	stack->size_b -= 1;
+	stack->a = aux;
+	ft_printf("push a\n");
+}
+
+void	push_both(t_stacks *stack)
+{
+	push_a(stack);
+	push_b(stack);
 }

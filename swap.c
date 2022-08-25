@@ -6,13 +6,13 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:35:09 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/23 08:58:35 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/25 10:09:11 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap_a(t_stacks *stack)
+void	swap_a(t_stacks *stack)
 {
 	ft_printf("swap_a\n");
 	stack->a->value ^= stack->a->next->value;
@@ -20,7 +20,7 @@ void	ft_swap_a(t_stacks *stack)
 	stack->a->value ^= stack->a->next->value;
 }
 
-void	ft_swap_b(t_stacks *stack)
+void	swap_b(t_stacks *stack)
 {
 	ft_printf("swap_b\n");
 	stack->b->value ^= stack->b->next->value;
@@ -28,8 +28,8 @@ void	ft_swap_b(t_stacks *stack)
 	stack->b->value ^= stack->b->next->value;
 }
 
-void	ft_swap_both(t_stacks *stack)
+void	swap_both(t_stacks *stack)
 {
-	ft_swap_a(stack);
-	ft_swap_b(stack);
+	swap_a(stack);
+	swap_b(stack);
 }

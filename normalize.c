@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 16:08:30 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/23 08:55:28 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/24 15:52:45 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_clone(char **argv, int *stack_a, int size)
 
 int	*ft_normalize(char **argv, int size, int *aux)
 {
-	int	stack_a[200];
+	int	stack_a[700];
 	int	i;
 	int	j;
 	int	normalizer;
