@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
-SRC = push_swap.c error.c swap.c push.c rotate.c reverse_rotate.c pop.c radix.c is_sorted.c normalize.c five_sort.c three_sort.c biggest.c
+SRC = push_swap.c error.c swap.c push.c rotate.c reverse_rotate.c pop.c radix.c is_sorted.c normalize.c five_sort.c three_sort.c
 OBJ = $(SRC:.c=.o)
 INCLUDE = include/push_swap.h
 
@@ -17,10 +17,6 @@ libft/libft.a:
 
 %.o: %.c $(INCLUDE)
 	$(CC) $(CFLAGS) -I include -c $< -o $@
-
-debug:	
-		$(CC) -g $(CFLAGS) $(SRC) libft/libft.a -o $@	 
-		gdb --tui --args  ./$@ 1 5 2 4 3
 
 clean:
 	make clean -C libft/

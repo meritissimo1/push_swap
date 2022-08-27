@@ -6,11 +6,28 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 14:22:57 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/25 11:11:49 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/27 15:47:01 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	free_stack(t_stacks *stack, int argc)
+{
+	t_node	*aux;
+	t_node	*next;
+	int		i;
+
+	i = 0;
+	aux = stack->a;
+	while (i < argc)
+	{
+		next = aux->next;
+		free(aux);
+		aux = next;
+		i++;
+	}
+}
 
 void	check_int_size(char *argv)
 {
@@ -53,7 +70,7 @@ void	check_for_errors(char **argv, int argc)
 	int	j;
 
 	i = 1;
-	if (!argc)
+	if (argc < 2)
 		exit(0);			
 	while (argv[i])
 	{

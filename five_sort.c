@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   little_sort.c                                      :+:      :+:    :+:   */
+/*   five_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 10:34:02 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/25 10:10:23 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/26 09:31:17 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	push_smallest_b(t_stacks *stack, int node)
 	if (node == 4)
 	{
 		reverse_rotate_a(stack);
-		reverse_rotate_b(stack);
+		reverse_rotate_a(stack);
 	}
 	if (node == 5)
 		reverse_rotate_a(stack);

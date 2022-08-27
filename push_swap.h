@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 10:15:25 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/25 11:05:11 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/26 15:31:28 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_node
 	int				value;
 }t_node;
 
-typedef struct s_stacks
+typedef struct s_stacks  
 {
 	t_node	*a;
 	t_node	*b;
@@ -34,6 +34,7 @@ typedef struct s_stacks
 }t_stacks;
 
 int		*ft_normalize(char **argv, int size, int *aux);
+void	free_stack(t_stacks *stack, int argc);
 
 void	check_for_errors(char **argv, int argc);
 bool	ft_is_sorted(t_stacks *stack);

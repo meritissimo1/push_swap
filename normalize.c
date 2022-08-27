@@ -6,13 +6,13 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 16:08:30 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/24 15:52:45 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/27 16:12:45 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
-void	ft_clone(char **argv, int *stack_a, int size)
+void	ft_clone(char **argv, int *clone, int size)
 {
 	int	i;
 	int	j;
@@ -21,7 +21,7 @@ void	ft_clone(char **argv, int *stack_a, int size)
 	j = 1;
 	while (i < size)
 	{
-		stack_a[i] = ft_atoi(argv[j]);
+		clone[i] = ft_atoi(argv[j]);
 		i++;
 		j++;
 	}
@@ -29,12 +29,12 @@ void	ft_clone(char **argv, int *stack_a, int size)
 
 int	*ft_normalize(char **argv, int size, int *aux)
 {
-	int	stack_a[700];
+	int	clone[1000];
 	int	i;
 	int	j;
 	int	normalizer;
 
-	ft_clone(argv, stack_a, size);
+	ft_clone(argv, clone, size);
 	i = 0;
 	while (i < size)
 	{
@@ -42,7 +42,7 @@ int	*ft_normalize(char **argv, int size, int *aux)
 		j = 0;
 		while (j < size)
 		{
-			if (stack_a[i] > stack_a[j] && j != i)
+			if (clone[i] > clone[j] && j != i)
 				normalizer++;
 			aux[i] = normalizer;
 			j++;

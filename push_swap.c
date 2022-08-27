@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 10:15:10 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/25 11:47:24 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/26 16:20:265 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,36 +57,46 @@ void	sort(t_stacks *stack, int argc)
 
 void	circular(t_stacks *stack)
 {
-	t_node *aux;
+	t_node *tail;
+	int		i;
 
-	aux = stack->a;
-	while (aux->next)
-		aux = aux->next;
-	stack->a->previous = aux;
-	aux->next = stack->a;	
+	i = 1;
+	tail = stack->a;
+	while (i < stack->size_a)
+	{
+		tail = tail->next;
+		i++;
+	}		
+	stack->a->previous = tail;
+	tail->next = stack->a;	
 }
 
-void	insert_end(t_stacks *stack, int value)
+t_node	*insert_end(t_stacks *stack, int *value, int argc, int i)
 {
 	t_node	*new;
-	t_node	*aux;
+	t_node	*head;
 
-	new = (t_node *)malloc(sizeof(t_node));
-	aux = (t_node *)malloc(sizeof(t_node));
-	new->value = value;
-	new->next = NULL;
-	if (stack->a == NULL)
+	new = stack->a;
+	while (i < argc - 1)
 	{
-		stack->a = new;
-		new->previous = NULL;
-	}
-	else
-		aux = stack->a;
-	while (aux->next)
-		aux = aux->next;
-	aux->next = new;
-	new->previous = aux;
-	aux = stack->a;
+		if (new == NULL)
+		{
+			new = (t_node *)ft_calloc(sizeof(t_node), 1);
+			new->value = value[i];
+			head = new;
+			new->next = NULL;
+			new->previous = NULL;
+		}
+		else
+		{
+			new->next = (t_node *)ft_calloc(sizeof(t_node), 1);
+			new->next->previous = new;
+			new = new->next;
+			new->value = value[i];
+		}
+		i++;
+	}	
+	return (head);
 }
 
 void	init_stack(t_stacks *stack, int argc)
@@ -101,23 +111,21 @@ void	init_stack(t_stacks *stack, int argc)
 int	main(int argc, char **argv)
 {
 	t_stacks	*stack;
-	int			i;
-	int			*test;
+	int			*normalized;
 	int			aux[1000];
-
-	i = 0;
+	int			i;
+	
 	check_for_errors(argv, argc-1);
-	stack = (t_stacks *)malloc(sizeof(t_stacks));
+	stack = (t_stacks *)ft_calloc(sizeof(t_stacks), 1);
 	init_stack(stack, argc);
-	test = ft_normalize(argv, argc - 1, aux);
-	while (i < argc - 1)
-	{
-		insert_end(stack, test[i]);
-		i++;
-	}
+	normalized = ft_normalize(argv, argc-1, aux);
+	i = 0;
+	stack->a = insert_end(stack, normalized, argc, i);
 	circular(stack);
+	print_stack(stack);
 	sort(stack, argc -1);
 	print_stack(stack);
+	free_stack(stack, argc-1);
 	free(stack);
-	return (0);
+	exit(0);
 }

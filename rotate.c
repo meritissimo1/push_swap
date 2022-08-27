@@ -5,39 +5,52 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 17:07:29 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/25 10:09:15 by marcrodr         ###   ########.fr       */
+/*   Created: 2022/08/16 16:25:14 by marcrodr          #+#    #+#             */
+/*   Updated: 2022/08/27 17:01:44 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate_a(t_stacks *stack)
+void	rotate_a(t_stacks *stack)
 {
-	t_node	*aux;
 
-	aux = stack->a;
-	if (aux == NULL)
+	t_node	*head;
+
+	head = stack->a;
+	if (head == NULL)
 		return ;
-	aux = aux->previous;
-	stack->a = aux;
-	ft_printf("reverse rotate a\n");
+	head = stack->a->next;
+	stack->a = head;
+	ft_printf("ra\n");
 }
 
-void	reverse_rotate_b(t_stacks *stack)
+void	rotate_b(t_stacks *stack)
 {
-	t_node	*aux;
+	t_node	*head;
 
-	aux = stack->b;
-	if (aux == NULL)
+	head = stack->b;
+	if (head == NULL)
 		return ;
-	aux = aux->previous;
-	stack->b = aux;
-	ft_printf("reverse rotate b\n");
+	head = stack->b->next;
+	stack->b = head;
+	ft_printf("rb\n");
 }
 
-void	reverse_rotate_both(t_stacks *stack)
+void	rotate_both(t_stacks *stack)
 {
-	reverse_rotate_a(stack);
-	reverse_rotate_b(stack);
+	t_node	*head_b;
+	t_node	*head_a;
+
+	head_b = stack->b;
+	head_a = stack->a;
+	if (head_a == NULL)
+		return ;
+	head_a = stack->a->next;
+	stack->a = head_a;
+	if (head_b == NULL)
+		return ;
+	head_b = stack->b->next;
+	stack->b = head_b;
+	ft_printf("rr\n");
 }

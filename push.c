@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 16:52:45 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/25 10:08:10 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/08/27 17:06:30 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	push_b(t_stacks *stack)
 	stack->size_a -= 1;
 	stack->size_b += 1;
 	stack->b = aux;
-	ft_printf("push b\n");
+	ft_printf("pb\n");
 }
 
 void	push_a(t_stacks *stack)
@@ -57,11 +57,5 @@ void	push_a(t_stacks *stack)
 	stack->size_a += 1;
 	stack->size_b -= 1;
 	stack->a = aux;
-	ft_printf("push a\n");
-}
-
-void	push_both(t_stacks *stack)
-{
-	push_a(stack);
-	push_b(stack);
+	ft_printf("pa\n");
 }
