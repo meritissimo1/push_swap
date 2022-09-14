@@ -2,13 +2,14 @@
 
 <img width="403" alt="image" src="https://user-images.githubusercontent.com/81334995/179250784-b24718ed-c5d9-4784-b9c3-b97f82d3ac73.png">
 
+
 This program that takes a list of `int`s as arguments:
 
 ```bash
 $ ./push_swap 7 1 8 9 4 2 6 5 3 (Bottom)
 ```
 
-Parses them into `stack a`:
+Put them into `stack a`:
 
 Then sorts them with `stack b` and using the operations:
 
